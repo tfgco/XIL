@@ -9,9 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DyncDll</RootNamespace>
     <AssemblyName>DyncDll</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworks>net45</TargetFrameworks>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <!--><TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile><!-->
+  </PropertyGroup>
+  <PropertyGroup>
+    <RuntimeIdentifiers>win;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,8 +37,8 @@
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(ProjectDir)Data
-copy $(TargetDir)$(TargetName).pdb $(ProjectDir)Data</PostBuildEvent>
+    <PostBuildEvent>cp $(TargetPath) $(ProjectDir)Data
+cp $(TargetDir)$(TargetName).pdb $(ProjectDir)Data</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
